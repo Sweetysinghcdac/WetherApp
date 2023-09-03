@@ -1,0 +1,20 @@
+.search{
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+    .search input{
+        background-color:  rgb(99, 112, 228);
+        outline: none;
+        border: none;
+        border-radius: 20px;
+        padding: 1em;
+        color: white;
+        font-size:1em;
+        text-align: center;
+        font-weight: 100;
+    }
+
+    .gap{
+        margin-bottom: 10px;
+    }

@@ -1,0 +1,151 @@
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit()">
+    <input type="text" placeholder="Search City" style="color: white;" name="city" [(ngModel)]="cityName">
+  </form>
+</div>
+
+
+
+<div class="container" *ngIf="weatherData">
+  <div class="upper-data">
+    <img
+      src="https://img.freepik.com/free-vector/realistic-hot-background_23-2149456032.jpg?w=740&t=st=1692264706~exp=1692265306~hmac=0552d5033fda9a2f1bc413992cedf215257c631b627c0699a6484cadf90b6f19"
+      alt="" *ngIf="weatherData.main.temp > 15">
+    <img src="https://valthorensguide.com/images/sea-cloud-mar-2017.jpg" alt="" *ngIf="weatherData.main.temp <= 15">
+
+    <div class="weather-data">
+      <div class="location">{{weatherData.name}}</div>
+      <!-- <div class="temperature">{{weatherData.main.temp | number:'1.0-0'}}&deg;C</div> -->
+      <div class="temperature">{{data | number:'1.0-0'}}&deg;C</div>
+    </div>
+
+  </div>
+  <div class="lower-data">
+    <div class="more-info-label">
+      More Information
+    </div>
+
+    <div class="more-info-container">
+     
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="assets/images/max.png" alt="">
+
+          <span class="gap">max</span>
+        </div>
+        <div class="info-block-value">
+          {{MaxTemp | number:'1.0-0'}}&deg;C
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="https://as2.ftcdn.net/v2/jpg/05/78/29/43/1000_F_578294302_wPiy7qUG4buSnnR7t6UoYrP0TuwYcXbW.jpg" alt="">
+
+          <span class="gap">Pressure</span>
+        </div>
+        <div class="info-block-value">
+          <!-- {{weatherData.main.temp_min  | number:'1.0-0'}}&deg;C -->
+          {{weatherData.main.pressure  | number:'1.0-0'}}mbar
+          <!-- {{minTemp  | number:'1.0-0'}}&deg;C -->
+        
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="https://t3.ftcdn.net/jpg/06/10/88/32/240_F_610883229_FV38K7LbKlwKt5lV5LJMxFpYgYKL7fAT.jpg" alt="">
+
+          <span class="gap">humidity</span>
+        </div>
+        <div class="info-block-value">
+          {{weatherData.main.humidity}}%
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="https://img.freepik.com/free-vector/flat-design-weather-effect-pack_23-2149115498.jpg?w=740&t=st=1692854008~exp=1692854608~hmac=c5043a29a45871ec06cf47a0c50ac2fcec50c954c63ab689b57a158c500f3710" alt="">
+
+          <span class="gap">wind</span>
+        </div>
+        <div class="info-block-value">
+          {{weatherData.wind.speed}} km/h
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+<!-- <div class="container">
+  <div class="upper-data">
+   <img src="https://img.freepik.com/free-vector/realistic-hot-background_23-2149456032.jpg?w=740&t=st=1692264706~exp=1692265306~hmac=0552d5033fda9a2f1bc413992cedf215257c631b627c0699a6484cadf90b6f19" alt="" *ngIf="14 >15">
+   <img src="https://valthorensguide.com/images/sea-cloud-mar-2017.jpg" alt=""  *ngIf="14 <=15">
+
+   <div class="weather-data">
+    <div class="location">Wellington</div>
+    <div class="temperature">{{14.40 | number:'1.0-0'}}&deg;C</div>
+   </div>
+
+  </div>
+  <div class="lower-data">
+    <div class="more-info-label">
+      More Information
+    </div>
+          <div class="more-info-container">
+             <div class="info-block">
+              <div class="info-block-label">
+                 <img src="assets/images/min.png"alt="">
+                 
+                 <span>min</span>
+              </div>
+              <div class="info-block-value">
+                10&deg;C
+              </div>
+             </div>
+
+             <div class="info-block">
+              <div class="info-block-label">
+                 <img src="assets/images/max.png"alt="">
+                 
+                 <span>max</span>
+              </div>
+              <div class="info-block-value">
+                20&deg;C
+              </div>
+             </div>
+
+             <div class="info-block">
+              <div class="info-block-label">
+                 <img src="assets/images/max.png"alt="">
+                 
+                 <span>humidity</span>
+              </div>
+              <div class="info-block-value">
+                77%
+              </div>
+             </div>
+
+             <div class="info-block">
+              <div class="info-block-label">
+                 <img src="assets/images/max.png"alt="">
+                 
+                 <span>wind</span>
+              </div>
+              <div class="info-block-value">
+                11 km/h
+              </div>
+             </div>
+          </div>
+     
+  </div>
+
+</div> -->
